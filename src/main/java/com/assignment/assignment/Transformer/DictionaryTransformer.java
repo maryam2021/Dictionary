@@ -11,7 +11,6 @@ import java.io.IOException;
 @Service
 public class DictionaryTransformer {
 
-
     public DictionaryViewModel transform(String word) throws IOException {
         JsonNode wordInformation = createJsonNodeTree(word);
         String type = getType(wordInformation);
@@ -33,9 +32,10 @@ public class DictionaryTransformer {
     private String getType(JsonNode result) {
         return result.get("results").get(0).get("lexicalEntries").get(0).get("lexicalCategory").asText();
     }
-    private JsonNode createJsonNodeTree(String json) throws IOException {
+
+    private JsonNode createJsonNodeTree(String word) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        JsonNode jsonObj = mapper.readTree(json);
+        JsonNode jsonObj = mapper.readTree(word);
         return jsonObj;
 
     }
