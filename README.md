@@ -17,7 +17,7 @@ Dictionary is a microservice that facilitates the end user to utilize our expose
  
  #  Test
   To test the microservice locally please import the settings in gradle on your local system and then run the application. By default, the project will run on 8080 port. The api through which you can get the end result is
-“http://localhost:8080/{word}/cloud” 
+“http://localhost:8080/{source_lang}/cloud” 
  
   
   
