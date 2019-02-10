@@ -15,6 +15,9 @@
 * Spring Boot framework
 * Java
 * Oxford Dictionaries API
+* EndPoint where you can easily test this web app
+* http://localhost:8080/word/cloud
+
  
  # Running the tests
  We have complete automated test coverage  
