@@ -1,5 +1,6 @@
  # Project Tittle
-    Dictionary is a microservice that facilitates the end user to utilize our exposed end point to get the meaning, type and example of a     given word in English. Our microservice filters out the data using the Oxford dictionary apis.  
+*Dictionary is a microservice that facilitates the end user to utilize our exposed end point to get the meaning, type and example of  
+*a given word in English. Our microservice filters out the data using the Oxford dictionary apis.  
 # For Example
  * Word : cloud
  * This software gives you some basic information
@@ -16,7 +17,7 @@
 * Oxford Dictionaries API
  
  #  Test
-  To test the microservice locally please import the settings in gradle on your local system and then run the application by default the project will run on 8080 port the api through which you can get the end result is
+  To test the microservice locally please import the settings in gradle on your local system and then run the application. By default, the project will run on 8080 port. The api through which you can get the end result is
 “http://localhost:8080/word/cloud” 
  
   
