@@ -1,6 +1,5 @@
  # Project Tittle
-Dictionary is a microservice that facilitates the end user to utilize our exposed end point to get the meaning,type and example of  
-a given word in English. Our microservice filters out the data using the Oxford dictionary apis.  
+Dictionary is a microservice that facilitates the end user to utilize our exposed end point to get the meaning,type and example of a given word in English. Our microservice filters out the data using the Oxford dictionary apis.  
 # For Example
  * Word : cloud
  * This software gives you some basic information
