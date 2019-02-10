@@ -1,7 +1,6 @@
  # Project Tittle
-  Dictionary
-  Provides any type of word related information
-  # For Example
+    Dictionary is a microservice that facilitates the end user to utilize our exposed end point to get the meaning, type and example of a     given word in English. Our microservice filters out the data using the Oxford dictionary apis.  
+# For Example
  * Word : cloud
  * This software gives you some basic information
  * Type:noun
@@ -15,13 +14,10 @@
 * Spring Boot framework
 * Java
 * Oxford Dictionaries API
-* EndPoint where you can easily test this web app
-* http://localhost:8080/word/cloud
-
  
- # Running the tests
- We have complete automated test coverage  
- 
+ #  Test
+  To test the microservice locally please import the settings in gradle on your local system and then run the application by default the project will run on 8080 port the api through which you can get the end result is
+“http://localhost:8080/word/cloud” 
  
   
   
