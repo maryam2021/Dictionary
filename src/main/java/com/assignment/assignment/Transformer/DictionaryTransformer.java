@@ -1,7 +1,6 @@
 package com.assignment.assignment.Transformer;
 
 import com.assignment.assignment.ViewModel.DictionaryViewModel;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
@@ -12,13 +11,12 @@ import java.io.IOException;
 public class DictionaryTransformer {
 
     public DictionaryViewModel transform(String word) throws IOException {
-        JsonNode wordInformation = createJsonNodeTree(word);
-        String type = getType(wordInformation);
-        String meaning = getDefination(wordInformation);
-        String usage = getExample(wordInformation);
-        DictionaryViewModel dictionaryViewModel = new DictionaryViewModel(type,meaning,usage);
-        return  dictionaryViewModel;
-
+        JsonNode jsonObj = createJsonNodeTree(word);
+        String type= getType(jsonObj);
+        String meaning= getDefination(jsonObj);
+        String example= getExample(jsonObj);
+        DictionaryViewModel dictionaryViewModel=new DictionaryViewModel(type,meaning,example);
+        return dictionaryViewModel;
     }
 
     private String getExample(JsonNode result) {
@@ -33,10 +31,10 @@ public class DictionaryTransformer {
         return result.get("results").get(0).get("lexicalEntries").get(0).get("lexicalCategory").asText();
     }
 
-    private JsonNode createJsonNodeTree(String word) throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode jsonObj = mapper.readTree(word);
-        return jsonObj;
 
+    public JsonNode createJsonNodeTree(String json) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode jsonObj = mapper.readTree(json);
+        return jsonObj;
     }
 }

@@ -1,5 +1,8 @@
 Feature: DictionaryStepDefination
+
   Scenario:User is able to find word related information
-    Given the user add word
+    Given user has already word information
     When the user press button
-    Then the user is able to view word related information
+    Then the user is able to view word related type
+    And  the user is able to view word related meaning/usage
+

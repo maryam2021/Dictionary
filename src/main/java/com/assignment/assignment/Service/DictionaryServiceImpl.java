@@ -1,8 +1,6 @@
 package com.assignment.assignment.Service;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -19,12 +17,19 @@ public class DictionaryServiceImpl implements DictionaryService {
 
     @Override
     public String getWordInformation(String word) {
-        HttpHeaders setHeader = new HttpHeaders();
-        setHeader.add("app_id",id);
-        setHeader.add("app_key",key);
         RestTemplate restTemplate = new RestTemplate();
-        HttpEntity<String> entity = new HttpEntity<String>(setHeader);
+        HttpEntity<String> entity = new HttpEntity<String>(setHeaders());
         String wordInfo = restTemplate.exchange("https://od-api.oxforddictionaries.com/api/v1/entries/en/" + word, HttpMethod.GET,entity,String.class).getBody();
         return wordInfo;
     }
+
+
+    private HttpHeaders setHeaders(){
+        HttpHeaders setHeader = new HttpHeaders();
+        setHeader.add("app_id",id);
+        setHeader.add("app_key",key);
+        return setHeader;
+    }
 }
+
+

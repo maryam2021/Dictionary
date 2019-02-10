@@ -1,23 +1,20 @@
 package com.assignment.assignment.Handler;
 
-import com.assignment.assignment.Service.DictionaryService;
 import com.assignment.assignment.Service.DictionaryServiceImpl;
 import com.assignment.assignment.Transformer.DictionaryTransformer;
 import com.assignment.assignment.ViewModel.DictionaryViewModel;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 
 import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 @SpringBootTest
 public class DictionaryHandlerTest {
@@ -35,9 +32,10 @@ public class DictionaryHandlerTest {
 
     @Test
     public void givenUserEnterWordthenWordInformationShouldGenerate() throws IOException {
-         String responseEntity = getStringResponseEntity();
+        String responseEntity = getStringResponseEntity();
         DictionaryViewModel dictionaryViewModel =  dictionaryTransformer.transform(responseEntity);
         assertTrue(dictionaryViewModel.equals(verifyWordInformation()));
+
     }
 
     private String getStringResponseEntity() {
