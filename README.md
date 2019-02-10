@@ -17,10 +17,9 @@
 * Oxford Dictionaries API
  
  # Running the tests
- We are using Jenkinks for automation test run test before every release build 
+ We have complete automated test coverage  
  
- # Deployment
- We are using  AWS for deploy latet code in production environment
+ 
   
   
   
