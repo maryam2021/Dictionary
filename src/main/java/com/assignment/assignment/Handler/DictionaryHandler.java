@@ -21,8 +21,8 @@ public class DictionaryHandler {
     }
 
     public DictionaryViewModel getInformation(String word) throws IOException {
-         String wordInfo =  dictionaryService.getWordInformation(word);
-        return dictionaryTransformer.transform(wordInfo);
+         String wordInformation =  dictionaryService.getWordInformation(word);
+        return dictionaryTransformer.transform(wordInformation);
 
 
     }

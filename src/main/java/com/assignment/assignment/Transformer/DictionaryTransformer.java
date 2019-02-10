@@ -10,8 +10,8 @@ import java.io.IOException;
 @Service
 public class DictionaryTransformer {
 
-    public DictionaryViewModel transform(String word) throws IOException {
-        JsonNode jsonObj = createJsonNodeTree(word);
+    public DictionaryViewModel transform(String wordInformation) throws IOException {
+        JsonNode jsonObj = createJsonNodeTree(wordInformation);
         String type= getType(jsonObj);
         String meaning= getDefination(jsonObj);
         String example= getExample(jsonObj);

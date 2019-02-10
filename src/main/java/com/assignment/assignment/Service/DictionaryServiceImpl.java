@@ -19,8 +19,8 @@ public class DictionaryServiceImpl implements DictionaryService {
     public String getWordInformation(String word) {
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<String> entity = new HttpEntity<String>(setHeaders());
-        String wordInfo = restTemplate.exchange("https://od-api.oxforddictionaries.com/api/v1/entries/en/" + word, HttpMethod.GET,entity,String.class).getBody();
-        return wordInfo;
+        String wordInformation = restTemplate.exchange("https://od-api.oxforddictionaries.com/api/v1/entries/en/" + word, HttpMethod.GET,entity,String.class).getBody();
+        return wordInformation;
     }
 
 
