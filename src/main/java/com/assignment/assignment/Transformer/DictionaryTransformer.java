@@ -19,16 +19,16 @@ public class DictionaryTransformer {
         return dictionaryViewModel;
     }
 
-    private String getExample(JsonNode result) {
-        return result.get("results").get(0).get("lexicalEntries").get(0).get("entries").get(0).get("senses").get(0).get("examples").get(0).get("text").asText();
+    private String getExample(JsonNode jsonObj) {
+        return jsonObj.get("results").get(0).get("lexicalEntries").get(0).get("entries").get(0).get("senses").get(0).get("examples").get(0).get("text").asText();
     }
 
-    private String getDefination(JsonNode result) {
-        return result.get("results").get(0).get("lexicalEntries").get(0).get("entries").get(0).get("senses").get(0).get("definitions").get(0).asText();
+    private String getDefination(JsonNode jsonObj) {
+        return jsonObj.get("results").get(0).get("lexicalEntries").get(0).get("entries").get(0).get("senses").get(0).get("definitions").get(0).asText();
     }
 
-    private String getType(JsonNode result) {
-        return result.get("results").get(0).get("lexicalEntries").get(0).get("lexicalCategory").asText();
+    private String getType(JsonNode jsonObj) {
+        return jsonObj.get("results").get(0).get("lexicalEntries").get(0).get("lexicalCategory").asText();
     }
 
 
